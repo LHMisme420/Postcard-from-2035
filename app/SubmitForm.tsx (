@@ -1,0 +1,36 @@
+'use client';
+
+import { useState } from 'react';
+
+export default function SubmitForm() {
+  const [status, setStatus] = useState('');
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus('Sending...');
+
+    const formData = new FormData(e.currentTarget);
+    const res = await fetch('/api/submit', {
+      method: 'POST',
+      body: formData,
+    });
+
+    if (res.ok) {
+      window.location.href = '/success';
+    } else {
+      setStatus('Error – try again');
+    }
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="space-y-6 bg-white/10 p-8 rounded-2xl">
+      <input name="name" placeholder="Your name" required className="w-full p-4 rounded text-black" />
+      <textarea name="message" placeholder="Message to 2035..." required rows={6} maxLength={1000} className="w-full p-4 rounded text-black" />
+      <input name="email" type="email" placeholder="Your email" required className="w-full p-4 rounded text-black" />
+      <button type="submit" className="w-full bg-cyan-500 hover:bg-cyan-400 text-black font-bold text-xl py-6 rounded-xl">
+        Send My Free Postcard → 2035
+      </button>
+      {status && <p className="text-yellow-400">{status}</p>}
+    </form>
+  );
+}

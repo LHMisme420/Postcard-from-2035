@@ -13,7 +13,7 @@
     "react-dom": "^18",
     "stripe": "^16.2.0",
     "@supabase/supabase-js": "^2.45.0",
-  "lob": "^6.6.3",
+ "@lob/lob-typescript-sdk": "^1.3.5"
 
 
   }

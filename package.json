@@ -2,6 +2,7 @@
   "name": "postcard-2035",
   "version": "1.0.0",
   "private": true,
+  "type": "module",          ←←←←←←←←←← ADD THIS LINE
   "scripts": {
     "dev": "next dev",
     "build": "next build",

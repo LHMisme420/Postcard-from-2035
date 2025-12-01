@@ -13,6 +13,8 @@
     "react-dom": "^18",
     "stripe": "^16.2.0",
     "@supabase/supabase-js": "^2.45.0",
-    "lob": "^7.3.0"
+  "lob": "^6.6.3",
+
+
   }
 }

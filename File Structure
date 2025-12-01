@@ -1,0 +1,14 @@
+postcard-from-2035/
+├── app/
+│   ├── page.tsx
+│   ├── success/page.tsx
+│   └── api/submit/route.ts
+├── components/
+│   └── Countdown.tsx
+├── public/
+│   └── og.png
+├── next.config.js
+├── package.json
+├── .env.example
+└── supabase/
+    └── client.ts
